@@ -1,4 +1,3 @@
-
 INSERT INTO artist (name) VALUES
 ('The Beatles'),
 ('Queen'),
@@ -7,38 +6,33 @@ INSERT INTO artist (name) VALUES
 ('Freddie Mercury'),
 ('David Bowie');
 
-
 INSERT INTO genre (name) VALUES
 ('Rock'),
 ('Pop'),
 ('Progressive Rock');
 
-
 INSERT INTO artist_genre (artist_id, genre_id) VALUES
-(1, 1), (1, 2),  -- The Beatles: Rock, Pop
-(2, 1),          -- Queen: Rock
-(3, 1), (3, 3),  -- Pink Floyd: Rock, Progressive Rock
-(4, 2),          -- Michael Jackson: Pop
-(5, 1),          -- Freddie Mercury: Rock
-(6, 1), (6, 2);  -- David Bowie: Rock, Pop
-
+(1, 1), (1, 2),
+(2, 1),
+(3, 1), (3, 3),
+(4, 2),
+(5, 1),
+(6, 1), (6, 2);
 
 INSERT INTO album (title, release_year) VALUES
 ('Abbey Road', 1969),
 ('A Night at the Opera', 1975),
 ('The Dark Side of the Moon', 1973),
 ('Thriller', 1982),
-('Let It Be', 1970);
-
+('Let It Be', 1970),
+('Modern Hits', 2019);
 
 INSERT INTO artist_album (artist_id, album_id) VALUES
-(1, 1),  -- The Beatles → Abbey Road
-(1, 5),  -- The Beatles → Let It Be
-(2, 2),  -- Queen → A Night at the Opera
-(3, 3),  -- Pink Floyd → The Dark Side of the Moon
-(4, 4),  -- Michael Jackson → Thriller
-(5, 2);  -- Freddie Mercury → A Night at the Opera (как участник Queen)
-
+(1, 1), (1, 5),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 2);
 
 INSERT INTO track (title, duration, album_id) VALUES
 ('Come Together', 259, 1),
@@ -50,8 +44,18 @@ INSERT INTO track (title, duration, album_id) VALUES
 ('Thriller', 357, 4),
 ('Billie Jean', 294, 4),
 ('Let It Be', 243, 5),
-('My Way', 276, NULL);  -- NULL album_id для теста (сингл)
-
+('My Way', 276, 5),
+('my own', 180, 6),
+('own my', 185, 6),
+('my', 190, 6),
+('oh my god', 200, 6),
+('myself', 195, 6),
+('by myself', 193, 6),
+('bemy self', 188, 6),
+('myself by', 192, 6),
+('by myself by', 196, 6),
+('beemy', 183, 6),
+('premyne', 187, 6);
 
 INSERT INTO compilation (title, release_year) VALUES
 ('Greatest Rock Hits', 2019),
@@ -60,10 +64,9 @@ INSERT INTO compilation (title, release_year) VALUES
 ('My Favorite Songs', 2018),
 ('Best of the Beatles', 2022);
 
-
 INSERT INTO compilation_track (compilation_id, track_id) VALUES
-(1, 1), (1, 3), (1, 5), (1, 6),   -- Greatest Rock Hits
-(2, 2), (2, 4), (2, 7),            -- Classic 70s
-(3, 7), (3, 8),                    -- Pop Legends
-(4, 1), (4, 4), (4, 9), (4, 10),   -- My Favorite Songs
-(5, 1), (5, 9);                    -- Best of the Beatles
+(1, 1), (1, 3), (1, 5), (1, 6),
+(2, 2), (2, 4), (2, 7),
+(3, 7), (3, 8),
+(4, 1), (4, 4), (4, 9), (4, 10),
+(5, 1), (5, 9);
